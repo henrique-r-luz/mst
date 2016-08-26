@@ -9,8 +9,10 @@ package grafo;
  *
  * @author henrique
  */
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
 
-import javafx.scene.paint.Color;
 import javax.swing.JFrame;
 
 public class Grafo {
@@ -20,13 +22,33 @@ public class Grafo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       JFrame frame = new JFrame("Ola");
-       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       Janela janela  = new Janela();
-       frame.add(janela);
-       frame.setSize(1200,700);
-       frame.setVisible(true);
-      // System.out.print("atualiza");
+        JFrame frame = new JFrame("Ola");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Vertice vertice  = new Vertice();
+        List<Vertice> listaVertice = vertice.geraVertice();
+        List<Vertice> listaVerticeAux = new ArrayList<Vertice>(); 
+        listaVerticeAux.addAll(listaVertice);
+        listaVerticeAux.remove(vertice.initVertice);
+        Aresta aresta = new Aresta();
+        Aresta subGrafo = aresta.criaPrimeiraAresta(vertice.initVertice, listaVertice);
+        
+        
+        List<Aresta> grafo = new ArrayList<Aresta>();
+        grafo.add(subGrafo);
+        aresta.listaParada = listaVerticeAux;
+       
+        aresta.geraPrim(listaVertice, grafo);
+        Janela janela = new Janela(listaVertice,aresta.grafo);
+        frame.add(janela);
+        frame.setSize(1200, 700);
+        frame.setVisible(true);
+        // System.out.print("atualiza");
     }
+
+    /**
+     *
+     * @return
+     */
     
+
 }

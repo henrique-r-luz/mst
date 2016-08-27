@@ -25,20 +25,20 @@ public class Grafo {
         JFrame frame = new JFrame("Ola");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Vertice vertice  = new Vertice();
-        List<Vertice> listaVertice = vertice.geraVertice();
-        List<Vertice> listaVerticeAux = new ArrayList<Vertice>(); 
-        listaVerticeAux.addAll(listaVertice);
-        listaVerticeAux.remove(vertice.initVertice);
-        Aresta aresta = new Aresta();
-        Aresta subGrafo = aresta.criaPrimeiraAresta(vertice.initVertice, listaVertice);
-        
+        List<Vertice> listaVerticeInit = vertice.geraVertice();
+        List<Vertice> listaVerticeSemCon = new ArrayList<Vertice>();
+        listaVerticeSemCon.addAll(listaVerticeInit);
+        listaVerticeSemCon.remove(vertice.initVertice);
+        List<Vertice> listaVerticeCon = new ArrayList<Vertice>(); 
+        listaVerticeCon.add(vertice.initVertice);
         
         List<Aresta> grafo = new ArrayList<Aresta>();
-        grafo.add(subGrafo);
-        aresta.listaParada = listaVerticeAux;
-       
-        aresta.geraPrim(listaVertice, grafo);
-        Janela janela = new Janela(listaVertice,aresta.grafo);
+      
+       Aresta aresta = new Aresta();
+        aresta.geraPrim(listaVerticeSemCon,listaVerticeCon, grafo);
+        /*cria janela gráfica
+        */
+        Janela janela = new Janela(listaVerticeInit,aresta.grafo);
         frame.add(janela);
         frame.setSize(1200, 700);
         frame.setVisible(true);

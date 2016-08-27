@@ -47,7 +47,7 @@ public class Vertice {
         
         List<Vertice> listaVertice = new ArrayList<Vertice>();
         int cont = 1000;
-        for (int i = 0; i < 50; i++) {
+       /* for (int i = 0; i < 50; i++) {
             Random geradorx = new Random();
             Random geradory = new Random();
             Vertice vertice = new Vertice();
@@ -62,8 +62,24 @@ public class Vertice {
                 this.initVertice = vertice;
             }
             //geradorx.nextInt(799)
+        }*/
+         for (int i = 0; i < 80; i++) {
+           
+           
+            Random geradorx = new Random();
+            Random geradory = new Random();
+            Vertice vertice = new Vertice();
+            vertice.id  = i;
+            vertice.setX(geradorx.nextInt(1000)+100);
+            vertice.setY(geradorx.nextInt(600)+50);
+            listaVertice.add(vertice);
+              if(vertice.getX()<cont){
+                cont = vertice.getX(); 
+                this.initVertice = vertice;
+            }
+            //geradorx.nextInt(799)
         }
-        /* for (int i = 0; i < 10; i++) {
+         /* for (int i = 0; i < 25; i++) {
             Random geradorx = new Random();
             Random geradory = new Random();
             Vertice vertice = new Vertice();

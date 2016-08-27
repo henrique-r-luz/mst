@@ -20,12 +20,15 @@ public class Janela extends JPanel {
      
     public List<Vertice> lista;
     public List<Aresta> listaAresta;
+    public List<Aresta> vizinhos;
+    public Aresta arestaVerificar;
     
     
-    
-    public Janela(List<Vertice> lista, List<Aresta> listaAresta){
+    public Janela(List<Vertice> lista, List<Aresta> listaAresta, List<Aresta> vizinhos, Aresta arestaVerificar ){
         this.lista = lista;
         this.listaAresta = listaAresta;
+        this.vizinhos = vizinhos;
+        this.arestaVerificar = arestaVerificar;
     }
     
     
@@ -48,7 +51,17 @@ public class Janela extends JPanel {
          
          for(int i = 0;i<listaAresta.size();i++){
              Aresta aresta  = listaAresta.get(i);
+             
               g.setColor(Color.GREEN);
+              if(aresta.equals(this.arestaVerificar)){
+                  g.setColor(Color.YELLOW);
+              }
+              for(int j=0; j<vizinhos.size();j++){
+                  Aresta arestaVizinhos  = vizinhos.get(j);
+                  if(aresta.equals(arestaVizinhos)){
+                      g.setColor(Color.BLUE);
+                  }
+              }
               g.drawLine(aresta.verticeU.getX(), aresta.verticeU.getY(), aresta.verticeV.getX(), aresta.verticeV.getY());
          }
          

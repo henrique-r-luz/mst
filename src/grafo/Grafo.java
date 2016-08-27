@@ -35,10 +35,20 @@ public class Grafo {
         List<Aresta> grafo = new ArrayList<Aresta>();
       
        Aresta aresta = new Aresta();
-        aresta.geraPrim(listaVerticeSemCon,listaVerticeCon, grafo);
-        /*cria janela gráfica
-        */
-        Janela janela = new Janela(listaVerticeInit,aresta.grafo);
+       aresta.geraPrim(listaVerticeSemCon,listaVerticeCon, grafo);
+       
+       
+       /*
+       remove arestas para definição de grupos
+       */
+       DetecAresta detcAresta = new DetecAresta();
+       Aresta arestaTeste = aresta.grafo.get(4);
+       List<Aresta> vizinhos = new ArrayList<Aresta>();
+       detcAresta.arestasVizinhas(aresta.grafo, arestaTeste.verticeU,  arestaTeste, vizinhos, 0);
+        System.out.println(detcAresta.vizinhos);
+       /*cria janela gráfica
+        */ 
+        Janela janela = new Janela(listaVerticeInit,aresta.grafo,detcAresta.vizinhos,arestaTeste);
         frame.add(janela);
         frame.setSize(1200, 700);
         frame.setVisible(true);

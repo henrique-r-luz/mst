@@ -36,18 +36,18 @@ public class Vertice {
     public void setX(int x) {
         this.x = x;
     }
-    
+
     public void setY(int y) {
         this.y = y;
     }
-    
+
     //cria os vértices do grafo
     //de forma randômica
     public List<Vertice> geraVertice() {
-        
+
         List<Vertice> listaVertice = new ArrayList<Vertice>();
-        int cont = 1000;
-       /* for (int i = 0; i < 50; i++) {
+      //  int cont = 1000;
+         /*for (int i = 0; i < 50; i++) {
             Random geradorx = new Random();
             Random geradory = new Random();
             Vertice vertice = new Vertice();
@@ -63,23 +63,22 @@ public class Vertice {
             }
             //geradorx.nextInt(799)
         }*/
-         for (int i = 0; i < 80; i++) {
-           
-           
+       /* for (int i = 0; i < 80; i++) {
+
             Random geradorx = new Random();
             Random geradory = new Random();
             Vertice vertice = new Vertice();
-            vertice.id  = i;
-            vertice.setX(geradorx.nextInt(1000)+100);
-            vertice.setY(geradorx.nextInt(600)+50);
+            vertice.id = i;
+            vertice.setX(geradorx.nextInt(1000) + 100);
+            vertice.setY(geradorx.nextInt(600) + 50);
             listaVertice.add(vertice);
-              if(vertice.getX()<cont){
-                cont = vertice.getX(); 
+            if (vertice.getX() < cont) {
+                cont = vertice.getX();
                 this.initVertice = vertice;
             }
             //geradorx.nextInt(799)
-        }
-         /* for (int i = 0; i < 25; i++) {
+        }*/
+        /* for (int i = 0; i < 25; i++) {
             Random geradorx = new Random();
             Random geradory = new Random();
             Vertice vertice = new Vertice();
@@ -88,11 +87,110 @@ public class Vertice {
             listaVertice.add(vertice);
             //geradorx.nextInt(799)
         }*/
-          this.initVertice.cor = "vermelho";
-         return listaVertice;
+       // this.initVertice.cor = "vermelho";
+       Vertice vertice = new Vertice();
+        vertice.id = 1;
+       vertice.setX(58*(4));
+       vertice.setY(12*(4));
+       this.initVertice = vertice;
+       listaVertice.add(vertice);
+       
+        vertice = new Vertice();
+        vertice.id = 2;
+       vertice.setX(61*(4));
+       vertice.setY(15*(4));
+       listaVertice.add(vertice);
+       
+        vertice = new Vertice();
+        vertice.id = 3;
+       vertice.setX(61*(4));
+       vertice.setY(25*(4));
+       listaVertice.add(vertice);
+       
+       
+        vertice = new Vertice();
+        vertice.id = 4;
+       vertice.setX(64*(4));
+       vertice.setY(20*(4));
+       listaVertice.add(vertice);
+       
+       
+       vertice = new Vertice();
+        vertice.id = 5;
+       vertice.setX(64*(4));
+       vertice.setY(30*(4));
+       listaVertice.add(vertice);
+       
+       vertice = new Vertice();
+        vertice.id = 6;
+       vertice.setX(66*(4));
+       vertice.setY(18*(4));
+       listaVertice.add(vertice);
+       
+       vertice = new Vertice();
+        vertice.id = 7;
+       vertice.setX(66*(4));
+       vertice.setY(23*(4));
+       listaVertice.add(vertice);
+       
+       vertice = new Vertice();
+        vertice.id = 8;
+       vertice.setX(69*(4));
+       vertice.setY(15*(4));
+       listaVertice.add(vertice);
+       
+       
+       vertice = new Vertice();
+        vertice.id = 9;
+       vertice.setX(69*(4));
+       vertice.setY(21*(4));
+       listaVertice.add(vertice);
+       
+       vertice = new Vertice();
+        vertice.id = 10;
+       vertice.setX(70*(4));
+       vertice.setY(4*(4));
+       listaVertice.add(vertice);
+       
+       
+       vertice = new Vertice();
+        vertice.id = 11;
+       vertice.setX(72*(4));
+       vertice.setY(31*(4));
+       listaVertice.add(vertice);
+       
+       vertice = new Vertice();
+        vertice.id = 12;
+       vertice.setX(76*(4));
+       vertice.setY(27*(4));
+       listaVertice.add(vertice);
+       
+       vertice = new Vertice();
+        vertice.id = 13;
+       vertice.setX(77*(4));
+       vertice.setY(12*(4));
+       listaVertice.add(vertice);
+       
+       
+       vertice = new Vertice();
+        vertice.id = 14;
+       vertice.setX(78*(4));
+       vertice.setY(16*(4));
+       listaVertice.add(vertice);
+        
+       
+       
+       vertice = new Vertice();
+        vertice.id = 15;
+       vertice.setX(83*(4));
+       vertice.setY(21*(4));
+       listaVertice.add(vertice);
+        
+       
+       
+       return listaVertice;
+        
+        
     }
-    
-    
-   
 
 }

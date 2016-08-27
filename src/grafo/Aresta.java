@@ -62,8 +62,9 @@ public class Aresta {
     }
    //calcula as distâncias entre os dois pontos
     public double dist(Vertice v1, Vertice v2) {
-         float cateto1 = Math.abs((v1.getX() - v2.getX()));
-         float cateto2 = Math.abs((v1.getY() - v2.getY()));
+        
+         double cateto1 = Math.abs((v1.getX() - v2.getX()));
+         double  cateto2 = Math.abs((v1.getY() - v2.getY()));
          return Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2));
     
     }

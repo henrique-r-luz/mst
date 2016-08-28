@@ -25,6 +25,9 @@ public class Grafo {
         JFrame frame = new JFrame("Ola");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Vertice vertice  = new Vertice();
+        /*
+        inicializa os vértices
+        */
         List<Vertice> listaVerticeInit = vertice.geraVertice();
         List<Vertice> listaVerticeSemCon = new ArrayList<Vertice>();
         listaVerticeSemCon.addAll(listaVerticeInit);
@@ -42,7 +45,7 @@ public class Grafo {
        remove arestas para definição de grupos
        */
        DetecAresta detcAresta = new DetecAresta();
-       Aresta arestaTeste = aresta.grafo.get(4);
+       Aresta arestaTeste = aresta.grafo.get(2);
        List<Aresta> vizinhos = new ArrayList<Aresta>();
        detcAresta.arestasVizinhas(aresta.grafo, arestaTeste.verticeU,  arestaTeste, vizinhos, 0);
         System.out.println(detcAresta.vizinhos);

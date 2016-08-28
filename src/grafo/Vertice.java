@@ -12,6 +12,7 @@ import java.util.Random;
 /**
  *
  * @author henrique
+ * classe que representa os vertices do grafo
  */
 public class Vertice {
 

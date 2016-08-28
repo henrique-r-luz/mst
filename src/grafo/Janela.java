@@ -15,7 +15,9 @@ import java.util.List;
 import java.util.Random;
 import javax.swing.JPanel;
 
-
+/*
+classe resposnsável por gerar o grfo graficamente
+*/
 public class Janela extends JPanel {
      
     public List<Vertice> lista;
@@ -33,6 +35,9 @@ public class Janela extends JPanel {
     
     
     @Override
+    /*
+    metodo que pinta o gráfico
+    */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g); //To change body of generated methods, choose Tools | Templates.
          this.setBackground(Color.white);
@@ -54,7 +59,7 @@ public class Janela extends JPanel {
              
               g.setColor(Color.GREEN);
               if(aresta.equals(this.arestaVerificar)){
-                  g.setColor(Color.YELLOW);
+                  g.setColor(Color.ORANGE);
               }
               for(int j=0; j<vizinhos.size();j++){
                   Aresta arestaVizinhos  = vizinhos.get(j);

@@ -11,6 +11,7 @@ package grafo;
  */
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import javax.swing.JPanel;
@@ -22,8 +23,9 @@ public class Janela extends JPanel {
      
     public List<Vertice> lista;
     public List<Aresta> listaAresta;
-    public List<Aresta> vizinhos;
-    public Aresta arestaVerificar;
+    public List<Aresta> vizinhos = new ArrayList<Aresta>();
+    public List<Aresta> removearesta = new ArrayList<Aresta>();
+    public Aresta arestaVerificar = new Aresta();
     
     
     public Janela(List<Vertice> lista, List<Aresta> listaAresta, List<Aresta> vizinhos, Aresta arestaVerificar ){
@@ -31,6 +33,23 @@ public class Janela extends JPanel {
         this.listaAresta = listaAresta;
         this.vizinhos = vizinhos;
         this.arestaVerificar = arestaVerificar;
+    }
+    
+    
+     public Janela(List<Vertice> lista, List<Aresta> listaAresta, List<Aresta> removearesta){
+        this.lista = lista;
+        this.listaAresta = listaAresta;
+        this.removearesta=removearesta; 
+       
+    }
+     
+     
+     
+     public Janela(List<Vertice> lista, List<Aresta> listaAresta){
+        this.lista = lista;
+        this.listaAresta = listaAresta;
+        //this.removearesta=removearesta; 
+       
     }
     
     
@@ -61,8 +80,8 @@ public class Janela extends JPanel {
               if(aresta.equals(this.arestaVerificar)){
                   g.setColor(Color.ORANGE);
               }
-              for(int j=0; j<vizinhos.size();j++){
-                  Aresta arestaVizinhos  = vizinhos.get(j);
+              for(int j=0; j<this.removearesta.size();j++){
+                  Aresta arestaVizinhos  = this.removearesta.get(j);
                   if(aresta.equals(arestaVizinhos)){
                       g.setColor(Color.BLUE);
                   }

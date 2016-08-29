@@ -20,7 +20,7 @@ public class Grafo {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
         JFrame frame = new JFrame("Ola");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,14 +44,17 @@ public class Grafo {
        /*
        remove arestas para definição de grupos
        */
-       DetecAresta detcAresta = new DetecAresta();
-       Aresta arestaTeste = aresta.grafo.get(2);
-       List<Aresta> vizinhos = new ArrayList<Aresta>();
-       detcAresta.arestasVizinhas(aresta.grafo, arestaTeste.verticeU,  arestaTeste, vizinhos, 0);
-        System.out.println(detcAresta.vizinhos);
+       DetecAresta removeAresta = new DetecAresta(aresta.grafo);
+       //Thread.sleep(4000);
+       // System.out.println(removeAresta.removeAtresta);
+       //DetecAresta detcAresta = new DetecAresta();
+       //Aresta arestaTeste = aresta.grafo.get(2);
+      // List<Aresta> vizinhos = new ArrayList<Aresta>();
+      //detcAresta.arestasVizinhas(aresta.grafo, arestaTeste.verticeU,  arestaTeste, vizinhos, 0);
+      aresta.grafo.removeAll(removeAresta.removeAtresta);
        /*cria janela gráfica
         */ 
-        Janela janela = new Janela(listaVerticeInit,aresta.grafo,detcAresta.vizinhos,arestaTeste);
+        Janela janela = new Janela(listaVerticeInit,aresta.grafo);//,removeAresta.removeAtresta);
         frame.add(janela);
         frame.setSize(1200, 700);
         frame.setVisible(true);

@@ -5,6 +5,7 @@
  */
 package grafo;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +51,9 @@ public class Aresta {
                         refDist = aux;
                         arestaMinima.verticeU = verticeCon;
                         arestaMinima.verticeV = verticeSemCon;
-                        arestaMinima.distacia = refDist;
+                        arestaMinima.distacia =refDist;
+                      //  DecimalFormat df = new DecimalFormat("#,00");
+                      //  arestaMinima.distacia =  Double.parseDouble(df.format(refDist));
                     }
 
                 }
@@ -77,7 +80,7 @@ public class Aresta {
     public boolean paradaRecurciva(List<Vertice> listaVerticeSemCon) {
 
         if (listaVerticeSemCon.size() == 0) {
-            System.out.println(this.grafo.size());
+           
             return false;
         } else {
             return true;
